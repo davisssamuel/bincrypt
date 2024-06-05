@@ -14,7 +14,7 @@ The first version of this program used text files containing ASCII 1s and 0s, bu
 
 ## Encryption
 
-Integers are stored as 32 bit binary numbers. So, using binary files saves me the trouble of converting each calculated number to a 32 bit binary number.
+Integers are stored as 32-bit binary numbers. So, using binary files saves me the trouble of converting each calculated number to a 32-bit binary number.
 
 To encrypt files, I read the file character-by-character:
 
@@ -37,7 +37,7 @@ fwrite(&ascii_code, sizeof(ascii_code), 1 , outfile);
 
 Again, binary files save me a lot of trouble when decrypting because of the way they store integers.
 
-To decrypt files, I can make my buffer an integer which is a 32 bit binary number, so the program will read every 32 bits into the buffer from the binary file: 
+To decrypt files, I can make my buffer an integer which is a 32-bit binary number, so the program will read every 32 bits into the buffer from the binary file: 
 
 ```c
 int buf;
@@ -59,7 +59,7 @@ The program accepts a file as the input using the `-i` flag and outputs to a fil
 
 I added a `-v` flag to print a verbose output of what the program was writing to the output file. This meant I had to use part of my old ASCII-based algorithm to print to the console during encryption. 
 
-This algorithm iterates in reverse over a 32 length integer array:
+This algorithm iterates in reverse over a 32-length integer array:
 
 ```c
 int binary_num[32];
@@ -88,7 +88,7 @@ So if the `ascii_code` was 12, the program will convert it to binary as follows:
 Result: 1100
 ```
 
-If the `ascii_code` equals 0, meaning the entire number has been convert to binary, it will fill whatever indices remaining in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32 bit integer. 
+If the `ascii_code` equals 0, meaning the entire number has been convert to binary, it will fill whatever indices remaining in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32-bit integer. 
 
 Then the program iterates over the `binary_num` array, printing each index:
 
