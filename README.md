@@ -106,6 +106,8 @@ printf("%c", (char)buf);
 
 # Usage
 
+# Encryption
+
 To encrypt, specify your input and output files. Then use the `-e` flag with your key:
 
 ```
@@ -117,6 +119,8 @@ For a verbose output during encryption, use the `-v` flag:
 ```
 ./bincrypt -e <key> -i <input_file> -o <output_file> -v
 ```
+
+## Decryption
 
 To decrypt, again, specify your input and output files. Then use the `-d` flag with your key:
 
