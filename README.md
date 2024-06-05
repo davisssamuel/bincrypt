@@ -106,7 +106,7 @@ printf("%c", (char)buf);
 
 # Usage
 
-# Encryption
+## Encryption
 
 To encrypt, specify your input and output files. Then use the `-e` flag with your key:
 
