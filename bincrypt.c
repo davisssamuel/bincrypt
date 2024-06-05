@@ -84,6 +84,9 @@ int main(int argc, char **argv) {
       }
       i++;
     }
+    if (VERBOSE == 1) {
+      printf("\n");
+    }    
     fclose(outfile);
     fclose(infile);
   }
