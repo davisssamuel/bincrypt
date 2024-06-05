@@ -26,7 +26,7 @@ while (!feof(infile)) {
 }
 ```
 
-Then I calculate the "ASCII code" from the key and index which will be converted to binary when written to the binary file:
+Then I calculate the "ASCII code" from ASCII number plus the key and the index which will be converted to binary when written:
 
 ```c
 int ascii_code = (int)*buf + KEY + i;
@@ -68,7 +68,7 @@ for (int j = 31; j >= 0; j--) {
 }
 ```
 
-If the `ascii_code` does not equal to 0, it will mod the it by 2. When dividing a number by 2 there are only two possible remainders it can return, 1 or 0. Then it will set `ascii_code` to itself divided by 2: 
+If the `ascii_code` does not equal to 0, it will mod the it by 2. When dividing a number by 2 there are only two possible remainders it can return, 1 or 0. Then it will set `ascii_code` to itself divided by 2:
 
 ```c
 if (ascii_code != 0) {
@@ -98,7 +98,7 @@ for (int j = 0; j < 32; j++) {
 }
 ```
 
-For printing during decryption, the program simply prints the ASCII character that the integer from the buffer corresponds to:
+For printing during decryption, the program simply prints the ASCII character that the buffer integer corresponds to:
 
 ```c
 printf("%c", (char)buf);
