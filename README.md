@@ -21,8 +21,8 @@ To encrypt files, I read the file character-by-character:
 ```c
 char buf[1]; // buf is each character
 while (!feof(infile)) {
-	fread(buf, sizeof(buf), 1, infile);
-	...
+    fread(buf, sizeof(buf), 1, infile);
+    ...
 }
 ```
 
@@ -42,8 +42,8 @@ To decrypt files, I can make my buffer an integer which is a 32 bit binary numbe
 ```c
 int buf;
 while (!feof(infile)) {
-	fread(&buf, sizeof(buf), 1, infile);
-	...
+    fread(&buf, sizeof(buf), 1, infile);
+    ...
 }
 ```
 
@@ -64,7 +64,7 @@ This algorithm iterates in reverse over a 32 length integer array:
 ```c
 int binary_num[32];
 for (int j = 31; j >= 0; j--) {
-	...
+    ...
 }
 ```
 
@@ -72,8 +72,8 @@ If the `ascii_code` does not equal to 0, it will mod the it by 2. When dividing 
 
 ```c
 if (ascii_code != 0) {
-	binary_num[j] = ascii_code % 2;
-	ascii_code /= 2;
+    binary_num[j] = ascii_code % 2;
+    ascii_code /= 2;
 }
 ```
 
@@ -94,7 +94,7 @@ Then the program iterates over the `binary_num` array, printing each index:
 
 ```c
 for (int j = 0; j < 32; j++) {
-	printf("%d", binary_num[j]);
+    printf("%d", binary_num[j]);
 }
 ```
 
