@@ -1,6 +1,6 @@
 # Encryption Challenge
 
-Create a program that, when given a message from a file and an integer key, encrypts the message by adding the ASCII number for each character to the character's index and the key and then converts that sum to binary.
+Create a program that, when given a message from a file and an integer key, encrypts the message by adding the ASCII number for each character to the character's index and to the key and then converts that sum to binary.
 
 The program should also be able to decrypt any encrypted messages it creates.
 
