@@ -80,10 +80,10 @@ if (ascii_code != 0) {
 So if the `ascii_code` was 12, the program will calculate it as follows:
 
 ```
-1. 12 mod 2 = 0    12/2 = 6
-2.  6 mod 2 = 0    6/2 = 3
-3.  3 mod 2 = 1    3/2 = 1
-4.  1 mod 2 = 1    1/2 = 0
+12 mod 2 = 0    12/2 = 6
+ 6 mod 2 = 0    6/2 = 3
+ 3 mod 2 = 1    3/2 = 1
+ 1 mod 2 = 1    1/2 = 0
 
 Result: 1100
 ```
