@@ -77,7 +77,7 @@ if (ascii_code != 0) {
 }
 ```
 
-So if the `ascii_code` was 12, the program will calculate it as follows:
+So if the `ascii_code` was 12, the program will convert it to binary as follows:
 
 ```
 12 mod 2 = 0    12/2 = 6
