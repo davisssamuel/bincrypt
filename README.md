@@ -6,7 +6,7 @@ The program should also be able to decrypt any encrypted messages it creates.
 
 Try to make the program as fast as possible in the language of your choice.
 
-# Solution
+# My Solution
 
 I chose to write my solution in C so I could squeeze out as much speed as reasonably possible.
 
