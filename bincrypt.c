@@ -66,16 +66,16 @@ int main(int argc, char **argv) {
     while (!feof(infile)) {
       fread(buf, sizeof(buf), 1, infile);
       int ascii_code = (int)*buf + KEY + i;
-      fwrite(&ascii_code, sizeof(ascii_code),1 , outfile);
+      fwrite(&ascii_code, sizeof(ascii_code), 1 , outfile);
       if (VERBOSE == 1) {
         int binary_num[32];
         for (int j = 31; j >= 0; j--) {
-          if (ascii_code == 0) {
-            binary_num[j] = 0;
-          } 
-          else {
+          if (ascii_code != 0) {
             binary_num[j] = ascii_code % 2;
             ascii_code /= 2;
+          }
+          else {
+            binary_num[j] = 0;
           }
         }
         for (int j = 0; j < 32; j++) {
