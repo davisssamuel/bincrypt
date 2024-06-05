@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <math.h>
+#include <time.h>
 
 int  ENCRYPT = -1;
 int  KEY     = 0;
@@ -13,7 +14,10 @@ int  VERBOSE = 0;
 void usage(char *program_name);
 
 int main(int argc, char **argv) {
-    
+
+  clock_t t;
+  t = clock();
+  
   int opt;
   while ((opt = getopt(argc, argv, "e:d:i:o:v")) != -1) {
     switch (opt) {
@@ -105,8 +109,10 @@ int main(int argc, char **argv) {
       fread(&buf, sizeof(buf), 1, infile);
       buf -= KEY + i;
       if (buf > 9) {
-        printf("%c", (char)buf);
         fprintf(outfile, "%c", (char)buf);
+        if (VERBOSE == 1) {
+          printf("%c", (char)buf);
+        }
       }
       i++;
     }
@@ -118,6 +124,10 @@ int main(int argc, char **argv) {
     usage(argv[0]);
     return 1;
   }
+  
+  t = clock() - t;
+  double time = ((double)t)/CLOCKS_PER_SEC;
+  printf("%fs\n", time);
   return 0; 
 }
 
