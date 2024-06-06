@@ -61,12 +61,14 @@ int main(int argc, char **argv) {
     }
 
     // encryption
-    char buf[1];
+    char buf[1]; // buf is each character
     int i = 0;
     while (!feof(infile)) {
       fread(buf, sizeof(buf), 1, infile);
       int ascii_code = (int)*buf + KEY + i;
       fwrite(&ascii_code, sizeof(ascii_code), 1 , outfile);
+
+      // verbose output for encryption
       if (VERBOSE == 1) {
         int binary_num[32];
         for (int j = 31; j >= 0; j--) {
@@ -107,12 +109,14 @@ int main(int argc, char **argv) {
 
     // decryption
     int i = 0;
-    int buf;
+    int buf; // buf is each integer (32 bits)
     while (!feof(infile)) {
       fread(&buf, sizeof(buf), 1, infile);
       buf -= KEY + i;
-      if (buf > 9) {
+      if (buf > 8) { // exclude ascii values 0-8
         fprintf(outfile, "%c", (char)buf);
+
+        // verbose output for decryption
         if (VERBOSE == 1) {
           printf("%c", (char)buf);
         }
@@ -127,7 +131,6 @@ int main(int argc, char **argv) {
     usage(argv[0]);
     return 1;
   }
-  
   t = clock() - t;
   double time = ((double)t)/CLOCKS_PER_SEC;
   printf("%fs\n", time);
