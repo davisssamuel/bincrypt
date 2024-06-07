@@ -88,7 +88,7 @@ So if the `ascii_code` was 12, the program will convert it to binary as follows:
 Result: 1100
 ```
 
-If the `ascii_code` equals 0, meaning the entire number has been convert to binary, it will fill whatever indices remaining in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32-bit integer. 
+If the `ascii_code` equals 0, meaning the entire number has been converted to binary, it will fill the remaining indices in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32-bit integer. 
 
 Then the program iterates over the `binary_num` array, printing each index:
 
