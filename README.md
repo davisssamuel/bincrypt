@@ -1,22 +1,14 @@
 # Encryption Challenge
 
-Create a program that, when given a message from a file and an integer key, encrypts the message by adding the ASCII number for each character to the character's index and to the key and then converts that sum to binary.
-
-The program should also be able to decrypt any encrypted messages it creates.
-
-Try to make the program as fast as possible in the language of your choice.
+Create a program that, when given a message from a file and an integer key, encrypts the message by adding the ASCII number for each character to the character's index and to the key and then converts that sum to binary. The program should also be able to decrypt any encrypted messages it creates. Make the program as fast as possible in the language of your choice.
 
 # My Solution
 
-I chose to write my solution in C to make it as speedy as reasonably possible.
-
-My first solution used text files containing ASCII 1s and 0s, but I moved away from that to use literal binary files which sped up the program a lot and made the algorithm much simpler.
+I chose to write my solution in C to make it as quick as possible. At first, I stored encrypted messages in text files containing ASCII 1s and 0s, but I moved from that to use literal binary files which sped up the program tremendously and made the algorithm much simpler.
 
 ## Encryption
 
-Integers are stored as 32-bit binary numbers. So, using binary files saves me the trouble of converting each calculated number to a 32-bit binary number.
-
-To encrypt files, I read the file character-by-character:
+Integers are stored as 32-bit binary numbers. So, using binary files saved me the trouble of converting each calculated number to a 32-bit binary number. To encrypt files, I read the file character-by-character:
 
 ```c
 char buf[1]; // buf is each character
@@ -35,9 +27,7 @@ fwrite(&ascii_code, sizeof(ascii_code), 1 , outfile);
 
 ## Decryption
 
-Again, binary files save me a lot of trouble when decrypting because of the way they store integers.
-
-To decrypt files, I can make my buffer an integer which is a 32-bit binary number, so the program will read every 32 bits into the buffer from the binary file: 
+Again, using binary files saved me a lot of trouble when decrypting. To decrypt files, I made my buffer an integer which is a 32-bit binary number, so the program will read every 32 bits into the buffer from the binary file: 
 
 ```c
 int buf;
@@ -55,11 +45,7 @@ buf -= KEY + i;
 
 ## Output
 
-The program accepts a file as the input using the `-i` flag and outputs to a file using the `-o` flag. Both of these options are required.
-
-I added a `-v` flag to print a verbose output of what the program was writing to the output file. This meant I had to use part of my old ASCII-based algorithm to print to the console during encryption. 
-
-This algorithm iterates in reverse over a 32-length integer array:
+The program accepts a file as the input using the `-i` flag and outputs to a file using the `-o` flag. Both of these options are required. I added a `-v` flag to print a verbose output of what the program was writing to the output file. This meant I had to use part of my old ASCII-based algorithm to print to the console during encryption. This algorithm iterates in reverse over a 32-length integer array:
 
 ```c
 int binary_num[32];
@@ -88,9 +74,7 @@ So if the `ascii_code` was 12, the program will convert it to binary as follows:
 Result: 1100
 ```
 
-If the `ascii_code` equals 0, meaning the entire number has been converted to binary, it will fill the remaining indices in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32-bit integer. 
-
-Then the program iterates over the `binary_num` array, printing each index:
+If the `ascii_code` equals 0, meaning the entire number has been converted to binary, it will fill the remaining indices in the `binary_num` array with zeroes to ensure all 32 indices have a value so it accurately represents the 32-bit integer. Then the program iterates over the `binary_num` array, printing each index:
 
 ```c
 for (int j = 0; j < 32; j++) {
@@ -98,7 +82,7 @@ for (int j = 0; j < 32; j++) {
 }
 ```
 
-For printing during decryption, the program simply prints the ASCII character that the buffer integer corresponds to:
+When printing during decryption, the program simply prints the ASCII character that the buffer integer corresponds to:
 
 ```c
 printf("%c", (char)buf);
