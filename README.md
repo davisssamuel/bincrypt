@@ -4,7 +4,7 @@ Create a program that, when given a message from a file and an integer key, encr
 
 # My Solution
 
-I chose to write my solution in C to make it as quick as possible. At first, I stored encrypted messages in text files containing ASCII 1s and 0s, but I moved from that to use literal binary files which sped up the program tremendously and made the algorithm much simpler.
+I chose to write my solution in C to make it as fast as (reasonably) possible. At first, I stored encrypted messages in text files containing ASCII 1s and 0s, but I moved from that to use literal binary files which sped up the program tremendously and made the algorithm much simpler.
 
 ## Encryption
 
