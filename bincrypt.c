@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <math.h>
 
 int  ENCRYPT = -1;
 int  KEY     = 0;
