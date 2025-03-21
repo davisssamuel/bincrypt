@@ -1,4 +1,4 @@
-# The Challenge
+# Encryption Challenge
 
 Create a program that, when given both a file and a (integer) key, encrypts the file by adding together the ASCII number for each character, the character's index in the file, and the key and then converts that sum to binary. The program should also be able to decrypt any encrypted files it creates. Make the program as fast as possible in the language of your choice.
 
