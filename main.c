@@ -80,15 +80,15 @@ int main(int argc, char *argv[]) {
     for (int i = 1; i < argc; ++i) {
         if (argv[i][0] == '-') {
             switch (argv[i][1]) {
-            case 'e':
-                encrypt_flag = atoi(argv[++i]);
-                break;
-            case 'd':
-                decrypt_flag = atoi(argv[++i]);
-                break;
-            case 'v':
-                verbose_flag = 1;
-                break;
+                case 'e':
+                    encrypt_flag = atoi(argv[++i]);
+                    break;
+                case 'd':
+                    decrypt_flag = atoi(argv[++i]);
+                    break;
+                case 'v':
+                    verbose_flag = 1;
+                    break;
             }
         } else {
             if (file_count == 0) {

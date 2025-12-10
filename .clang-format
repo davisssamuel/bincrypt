@@ -1,12 +1,15 @@
 BasedOnStyle: LLVM
-IndentWidth: 4
 ColumnLimit: 100
+
+# Indentation
+IndentWidth: 4
+IndentCaseLabels: true
 
 # Bracing
 BreakBeforeBraces: Attach
 InsertBraces: true
 
-# Single-line statements (https://medium.com/@jonathanabrams/single-line-if-statements-2565c62ff492)
+# Short blocks
 AllowShortBlocksOnASingleLine: Always
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: WithoutElse
