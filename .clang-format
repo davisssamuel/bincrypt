@@ -10,7 +10,7 @@ InsertBraces: true
 AllowShortBlocksOnASingleLine: Always
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: WithoutElse
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false
 
 # Spacing
 SpaceBeforeParens: ControlStatements
