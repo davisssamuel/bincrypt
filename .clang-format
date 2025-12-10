@@ -1,0 +1,30 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+
+# Bracing
+BreakBeforeBraces: Attach
+InsertBraces: true
+
+# Single-line statements (https://medium.com/@jonathanabrams/single-line-if-statements-2565c62ff492)
+AllowShortBlocksOnASingleLine: Always
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+
+# Spacing
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: true
+SpaceBeforeAssignmentOperators: true
+
+# Alignment
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignOperands: true
+
+# Pointers and references (https://stackoverflow.com/a/8161591)
+PointerAlignment: Right
+ReferenceAlignment: Right
+
+# Keep includes organized
+SortIncludes: true
