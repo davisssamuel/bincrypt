@@ -11,13 +11,13 @@ Read a walkthrough of my solution [here](https://samueldavis.net/encryption-chal
 To encrypt, specify your input and output files. Then use the `-e` flag with your key:
 
 ```
-./bincrypt -e <key> -i <input_file> -o <output_file>
+./bincrypt -e <key> <input_file> <output_file>
 ```
 
-For a verbose output during encryption, use the `-v` flag:
+For a verbose output during encryption, add the `-v` flag:
 
 ```
-./bincrypt -e <key> -i <input_file> -o <output_file> -v
+./bincrypt -e <key> -v <input_file> <output_file>
 ```
 
 ## Decryption
@@ -25,11 +25,11 @@ For a verbose output during encryption, use the `-v` flag:
 To decrypt, again, specify your input and output files. Then use the `-d` flag with your key:
 
 ```
-./bincrypt -d <key> -i <input_file> -o <output_file>
+./bincrypt -d <key> <input_file> <output_file>
 ```
 
-For a verbose output during encryption, use the `-v` flag:
+For a verbose output during encryption, add the `-v` flag:
 
 ```
-./bincrypt -d <key> -i <input_file> -o <output_file> -v
+./bincrypt -d <key> -v <input_file> <output_file>
 ```
