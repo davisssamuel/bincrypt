@@ -6,9 +6,7 @@ Read a walkthrough of my solution [here](https://samueldavis.net/encryption-chal
 
 # Usage
 
-## Encryption
-
-To encrypt, specify your input and output files. Then use the `-e` flag with your key:
+**To encrypt**, specify your input and output files. Then use the `-e` flag with your key:
 
 ```
 ./bincrypt -e <key> <input_file> <output_file>
@@ -20,9 +18,7 @@ For a verbose output during encryption, add the `-v` flag:
 ./bincrypt -e <key> -v <input_file> <output_file>
 ```
 
-## Decryption
-
-To decrypt, again, specify your input and output files. Then use the `-d` flag with your key:
+**To decrypt**, again, specify your input and output files. Then use the `-d` flag with your key:
 
 ```
 ./bincrypt -d <key> <input_file> <output_file>
